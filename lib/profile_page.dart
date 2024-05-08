@@ -341,10 +341,10 @@ class ProfilePageState extends State<ProfilePage> {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
         Expanded(
-          flex: 2,
+          flex: 3,
           child: _infoCell(title: 'Posts', value: '${gridMap.length}',),),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(15.0),
           child: Container(
             width: 1,
             height: 40,
@@ -382,7 +382,7 @@ class ProfilePageState extends State<ProfilePage> {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(15.0),
           child: Container(
             width: 1,
             height: 40,
@@ -390,7 +390,7 @@ class ProfilePageState extends State<ProfilePage> {
           ),
         ),
         Expanded(
-          flex: 2,
+          flex: 3,
           child: _infoCell(title: 'Location', value: 'Jordan')),
       ],
     );
