@@ -1,8 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:user_profile/custom_like_button.dart';
 import 'package:user_profile/productReviewsScreen.dart';
+import 'package:user_profile/service_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -75,7 +75,7 @@ class ProfilePageState extends State<ProfilePage> {
             child: Container(
               decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('images/profile1.jpg'),
+                  image: AssetImage('images/profile2.jpg'),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -167,36 +167,40 @@ class ProfilePageState extends State<ProfilePage> {
             itemBuilder: (BuildContext context, int index) => GestureDetector(
                 onTap: () {
                   // ****************************
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const ServicePage()),
+                  );
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(
-                        16.0,
-                      ),
-                      // color: const Color(0xFF7dcffa),
-                      gradient: LinearGradient(colors: [
-                        Colors.blue[400] ?? Colors.transparent,
-                        Colors.blue[300] ?? Colors.transparent,
-                        Colors.blue[200] ?? Colors.transparent,
-                      ]),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     offset: const Offset(0, 0),
-                      //     color: Colors.red[100] ?? Colors.transparent,
-                      //     blurRadius: 16.0,
-                      //   ),
-                      //   BoxShadow(
-                      //     offset: const Offset(0, 0),
-                      //     color: Colors.red[200] ?? Colors.transparent,
-                      //     blurRadius: 16.0,
-                      //   ),
-                      //   BoxShadow(
-                      //     offset: const Offset(0, 0),
-                      //     color: Colors.red[300] ?? Colors.transparent,
-                      //     blurRadius: 16.0,
-                      //   ),
-                      // ],
-                      ),
+                    borderRadius: BorderRadius.circular(
+                      16.0,
+                    ),
+                    // color: const Color(0xFF7dcffa),
+                    gradient: LinearGradient(colors: [
+                      Colors.blue[400] ?? Colors.transparent,
+                      Colors.blue[300] ?? Colors.transparent,
+                      Colors.blue[200] ?? Colors.transparent,
+                    ]),
+                    // boxShadow: [
+                    //   BoxShadow(
+                    //     offset: const Offset(0, 0),
+                    //     color: Colors.red[100] ?? Colors.transparent,
+                    //     blurRadius: 16.0,
+                    //   ),
+                    //   BoxShadow(
+                    //     offset: const Offset(0, 0),
+                    //     color: Colors.red[200] ?? Colors.transparent,
+                    //     blurRadius: 16.0,
+                    //   ),
+                    //   BoxShadow(
+                    //     offset: const Offset(0, 0),
+                    //     color: Colors.red[300] ?? Colors.transparent,
+                    //     blurRadius: 16.0,
+                    //   ),
+                    // ],
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -335,45 +339,58 @@ class ProfilePageState extends State<ProfilePage> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: <Widget>[
-        _infoCell(title: 'Projects', value: '1135'),
-        Container(
-          width: 1,
-          height: 40,
-          color: Colors.grey,
+        Expanded(
+          flex: 2,
+          child: _infoCell(title: 'Posts', value: '7')),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: 1,
+            height: 40,
+            color: Colors.grey,
+          ),
         ),
-        Column(
-          children: [
-            const Text(
-              'Reviews & Ratings',
-              style: TextStyle(
-                fontFamily: 'OpenSans',
-                fontWeight: FontWeight.w300,
-                fontSize: 14,
+        Expanded(
+          flex: 3,
+          child: Column(
+            children: [
+              // const Text(
+              //   'Reviews & Ratings',
+              //   style: TextStyle(
+              //     fontFamily: 'OpenSans',
+              //     fontWeight: FontWeight.w300,
+              //     fontSize: 14,
+              //   ),
+              // ),
+              GestureDetector(
+                onTap: () {
+                  // ****************************
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ProductReviewsScreen()));
+                },
+                child: Image.asset(
+                  'images/customer_review.png',
+                  width: 55,
+                  height: 55,
+                  // repeat: false,
+                ),
               ),
-            ),
-            GestureDetector(
-              onTap: () {
-                // ****************************
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ProductReviewsScreen()));
-              },
-              child: Image.asset(
-                'images/customer_review.png',
-                width: 55,
-                height: 55,
-                // repeat: false,
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
-        Container(
-          width: 1,
-          height: 40,
-          color: Colors.grey,
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            width: 1,
+            height: 40,
+            color: Colors.grey,
+          ),
         ),
-        _infoCell(title: 'Location', value: 'Jordan'),
+        Expanded(
+          flex: 2,
+          child: _infoCell(title: 'Location', value: 'Jordan')),
       ],
     );
   }
