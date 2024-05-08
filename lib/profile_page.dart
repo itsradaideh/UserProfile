@@ -175,8 +175,9 @@ class ProfilePageState extends State<ProfilePage> {
                       ),
                       // color: const Color(0xFF7dcffa),
                       gradient: LinearGradient(colors: [
+                        Colors.blue[400] ?? Colors.transparent,
+                        Colors.blue[300] ?? Colors.transparent,
                         Colors.blue[200] ?? Colors.transparent,
-                        Colors.blue[100] ?? Colors.transparent,
                       ]),
                       // boxShadow: [
                       //   BoxShadow(
@@ -224,6 +225,7 @@ class ProfilePageState extends State<ProfilePage> {
                                   .merge(
                                     const TextStyle(
                                       fontWeight: FontWeight.w700,
+                                      color: Colors.white,
                                     ),
                                   ),
                             ),
