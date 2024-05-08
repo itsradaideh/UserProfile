@@ -56,7 +56,8 @@ class ProfilePageState extends State<ProfilePage> {
       "price": "\$600",
       "images":
           "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/324310248/original/e7ddb37ba63642e0970372450d4f95108c091a7a/do-mobile-app-and-website-ui-ux-design-with-modern-look.png",
-    }
+    },
+    
   ];
 
   /// **********************************************
@@ -341,7 +342,7 @@ class ProfilePageState extends State<ProfilePage> {
       children: <Widget>[
         Expanded(
           flex: 2,
-          child: _infoCell(title: 'Posts', value: '7')),
+          child: _infoCell(title: 'Posts', value: '${gridMap.length}',),),
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
