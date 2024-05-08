@@ -1,5 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:user_profile/custom_like_button.dart';
 import 'package:user_profile/productReviewsScreen.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -12,27 +14,49 @@ class ProfilePage extends StatefulWidget {
 class ProfilePageState extends State<ProfilePage> {
   bool _isOpen = false;
   final PanelController _panelController = PanelController();
-  final _imageList = [
-    'images/1.jpg',
-    'images/2.jpeg',
-    'images/3.jpg',
-    'images/4.jpeg',
-    'images/5.jpg',
-    'images/6.jpg',
-    'images/7.jpeg',
-    'images/8.jpg',
-    'images/9.jpg',
-    'images/10.jpeg',
-    'images/11.png',
-    'images/12.jpeg',
-    'images/13.jpg',
-    'images/14.jpg',
-    'images/15.jpg',
-    'images/16.jpeg',
-    'images/17.jpg',
-    'images/18.jpeg',
-    'images/profile.jpg',
-    'images/profile1.jpg',
+  final List<Map<String, dynamic>> gridMap = [
+    {
+      "title": "Better Experience Design",
+      "price": "\$355",
+      "images":
+          "https://www.yellowslice.in/bed/wp-content/uploads/2022/08/fintech-ui-ux-design.png",
+    },
+    {
+      "title": "You will get wondrous UX UI design",
+      "price": "\$345",
+      "images":
+          "https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149051557.jpg",
+    },
+    {
+      "title": "You will get wondrous UX UI design",
+      "price": "\$475",
+      "images":
+          "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1689702912/catalog/1613054000936062976/rpno0cbnvt06iz0kne5c.jpg",
+    },
+    {
+      "title": "Better Experience Design",
+      "price": "\$575",
+      "images":
+          "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/335517501/original/de770a36061cbeb93474f1ecb7f4a7aa349ed150/do-ui-ux-design-using-figma-sass-website-figma-design-for-mobile-and-desktop.png",
+    },
+    {
+      "title": "Better Experience Design",
+      "price": "\$225",
+      "images":
+          "https://miro.medium.com/v2/resize:fit:682/1*j7TiBo6BraFMeXme9BHCcw.jpeg",
+    },
+    {
+      "title": "You will get wondrous UX UI design",
+      "price": "\$327",
+      "images":
+          "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/361401711/original/9f6a895b3e7fe61e2912137fb170fc894b3f1aeb/do-ui-ux-design-website-ui-ux-design-or-app-ux-ui-design.png",
+    },
+    {
+      "title": "You will get wondrous UX UI design",
+      "price": "\$600",
+      "images":
+          "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/324310248/original/e7ddb37ba63642e0970372450d4f95108c091a7a/do-mobile-app-and-website-ui-ux-design-with-modern-look.png",
+    }
   ];
 
   /// **********************************************
@@ -133,25 +157,104 @@ class ProfilePageState extends State<ProfilePage> {
             primary: false,
             shrinkWrap: true,
             padding: const EdgeInsets.all(10),
-            itemCount: _imageList.length,
+            itemCount: gridMap.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
-              mainAxisSpacing: 10,
               crossAxisSpacing: 10,
+              mainAxisSpacing: 10,
+              mainAxisExtent: 290,
             ),
             itemBuilder: (BuildContext context, int index) => GestureDetector(
-              onTap: () {
-                // ****************************
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(_imageList[index]),
-                    fit: BoxFit.cover,
+                onTap: () {
+                  // ****************************
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        16.0,
+                      ),
+                      // color: const Color(0xFF7dcffa),
+                      gradient: LinearGradient(colors: [
+                        Colors.blue[200] ?? Colors.transparent,
+                        Colors.blue[100] ?? Colors.transparent,
+                      ]),
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     offset: const Offset(0, 0),
+                      //     color: Colors.red[100] ?? Colors.transparent,
+                      //     blurRadius: 16.0,
+                      //   ),
+                      //   BoxShadow(
+                      //     offset: const Offset(0, 0),
+                      //     color: Colors.red[200] ?? Colors.transparent,
+                      //     blurRadius: 16.0,
+                      //   ),
+                      //   BoxShadow(
+                      //     offset: const Offset(0, 0),
+                      //     color: Colors.red[300] ?? Colors.transparent,
+                      //     blurRadius: 16.0,
+                      //   ),
+                      // ],
+                      ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ClipRRect(
+                        borderRadius: const BorderRadius.only(
+                          topLeft: Radius.circular(16.0),
+                          topRight: Radius.circular(16.0),
+                        ),
+                        child: Image.network(
+                          "${gridMap.elementAt(index)['images']}",
+                          height: 170,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "${gridMap.elementAt(index)['title']}",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleMedium!
+                                  .merge(
+                                    const TextStyle(
+                                      fontWeight: FontWeight.w700,
+                                    ),
+                                  ),
+                            ),
+                            const SizedBox(
+                              height: 8.0,
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  "${gridMap.elementAt(index)['price']}",
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .merge(
+                                        const TextStyle(
+                                          fontWeight: FontWeight.w700,
+                                          color: Color.fromARGB(
+                                              255, 255, 255, 255),
+                                        ),
+                                      ),
+                                ),
+                                const CustomLikeButton(),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-              ),
-            ),
+                )),
           )
         ],
       ),
@@ -199,7 +302,8 @@ class ProfilePageState extends State<ProfilePage> {
                     ? (MediaQuery.of(context).size.width - (2 * hPadding)) / 1.6
                     : double.infinity,
                 child: TextButton(
-                  onPressed: () { // ****************************
+                  onPressed: () {
+                    // ****************************
                     print('Message tapped');
                   },
                   style: TextButton.styleFrom(
@@ -246,7 +350,8 @@ class ProfilePageState extends State<ProfilePage> {
               ),
             ),
             GestureDetector(
-              onTap: () { // ****************************
+              onTap: () {
+                // ****************************
                 Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -315,10 +420,13 @@ class ProfilePageState extends State<ProfilePage> {
             ),
             Padding(
               padding: const EdgeInsets.only(left: 8),
-              child: Image.asset(
-                'images/verify1.png',
-                width: 22,
-                height: 22,
+              child: Tooltip(
+                message: 'Verified account',
+                child: Image.asset(
+                  'images/verify1.png',
+                  width: 22,
+                  height: 22,
+                ),
               ),
             ),
           ],
