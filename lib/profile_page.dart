@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:user_profile/custom_like_button.dart';
 import 'package:user_profile/detail_page.dart';
-import 'package:user_profile/productReviewsScreen.dart';
+import 'package:user_profile/product_reviews_screen.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -16,49 +16,56 @@ class ProfilePageState extends State<ProfilePage> {
   final PanelController _panelController = PanelController();
   final List<Map<String, dynamic>> gridMap = [
     {
-      "description": "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
+      "description":
+          "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
       "title": "Better Experience Design",
       "price": "\$355",
       "images":
           "https://www.yellowslice.in/bed/wp-content/uploads/2022/08/fintech-ui-ux-design.png",
     },
     {
-      "description": "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
+      "description":
+          "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
       "title": "You will get wondrous UX UI design",
       "price": "\$345",
       "images":
           "https://img.freepik.com/free-vector/gradient-ui-ux-background_23-2149051557.jpg",
     },
     {
-      "description": "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
+      "description":
+          "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
       "title": "You will get wondrous UX UI design",
       "price": "\$475",
       "images":
           "https://res.cloudinary.com/upwork-cloud/image/upload/c_scale,w_1000/v1689702912/catalog/1613054000936062976/rpno0cbnvt06iz0kne5c.jpg",
     },
     {
-      "description": "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
+      "description":
+          "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
       "title": "Better Experience Design",
       "price": "\$575",
       "images":
           "https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/335517501/original/de770a36061cbeb93474f1ecb7f4a7aa349ed150/do-ui-ux-design-using-figma-sass-website-figma-design-for-mobile-and-desktop.png",
     },
     {
-      "description": "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
+      "description":
+          "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
       "title": "Better Experience Design",
       "price": "\$225",
       "images":
           "https://miro.medium.com/v2/resize:fit:682/1*j7TiBo6BraFMeXme9BHCcw.jpeg",
     },
     {
-      "description": "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
+      "description":
+          "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
       "title": "You will get wondrous UX UI design",
       "price": "\$327",
       "images":
           "https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/gigs/361401711/original/9f6a895b3e7fe61e2912137fb170fc894b3f1aeb/do-ui-ux-design-website-ui-ux-design-or-app-ux-ui-design.png",
     },
     {
-      "description": "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
+      "description":
+          "Creating meaningful user experiences is about more than just aesthetics—it's about connecting with people on a deeper level. As designers, we must embrace empathy, collaboration, and innovation to craft UI/UX designs that truly resonate. From striking a balance between creativity and functionality to fostering a culture of feedback and inclusivity, the key to success lies in focusing on the human element. In a rapidly evolving field, let's stay current with technology and always design with heart.",
       "title": "You will get wondrous UX UI design",
       "price": "\$600",
       "images":
@@ -317,30 +324,31 @@ class ProfilePageState extends State<ProfilePage> {
           child: Container(
             alignment: Alignment.center,
             child: SizedBox(
-                width: _isOpen
-                    ? (MediaQuery.of(context).size.width - (2 * hPadding)) / 1.6
-                    : double.infinity,
-                child: TextButton(
-                  onPressed: () {
-                    // ****************************
-                    print('Message tapped');
-                  },
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    foregroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
+              width: _isOpen
+                  ? (MediaQuery.of(context).size.width - (2 * hPadding)) / 1.6
+                  : double.infinity,
+              child: TextButton(
+                onPressed: () {
+                  // ****************************
+                  print('Message tapped');
+                },
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  child: const Text(
-                    'MESSAGE',
-                    style: TextStyle(
-                      fontFamily: 'NimbusSanL',
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700,
-                    ),
+                ),
+                child: const Text(
+                  'MESSAGE',
+                  style: TextStyle(
+                    fontFamily: 'NimbusSanL',
+                    fontSize: 12,
+                    fontWeight: FontWeight.w700,
                   ),
-                )),
+                ),
+              ),
+            ),
           ),
         ),
       ],

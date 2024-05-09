@@ -20,7 +20,6 @@ class CustomLikeButton extends StatelessWidget {
           color: isLiked ? Colors.red : Colors.grey[100],
         );
       },
-
     );
   }
 }

@@ -67,63 +67,102 @@ class _DetailPageState extends State<DetailPage> {
                     ),
                   ),
                 ),
-              
-            
-          
-             Padding(
-            padding: EdgeInsets.only(
-              left: screenWidth / 20,
-              bottom: 20,
-              right: 20,
-            ),
-            child: ReadMoreText(
-              widget.description,
-              trimLines: 4,
-              trimMode: TrimMode.Line,
-              trimExpandedText: ' show less',
-              trimCollapsedText: ' show more',
-              moreStyle: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue),
-              lessStyle: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue),
-              style: const TextStyle(
-                fontWeight: FontWeight.w600,
-                color: Colors.black87,
-                fontSize: 15,
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Text(
-                    'PRICE',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.green,
-                      fontSize: 14,
-                    ),
+                Padding(
+                  padding: EdgeInsets.only(
+                    left: screenWidth / 20,
+                    bottom: 20,
+                    right: 20,
                   ),
-                Text(
-                  widget.price,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.w700,
-                    color: Colors.green,
-                    fontSize: 20,
+                  child: ReadMoreText(
+                    widget.description,
+                    trimLines: 4,
+                    trimMode: TrimMode.Line,
+                    trimExpandedText: ' show less',
+                    trimCollapsedText: ' show more',
+                    moreStyle: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                    lessStyle: const TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.blue),
+                    style: const TextStyle(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black87,
+                      fontSize: 15,
+                    ),
                   ),
                 ),
               ],
             ),
           ),
-          ],
-         ),
-         ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          const Text(
+                            'PRICE',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: Colors.green,
+                              fontSize: 14,
+                            ),
+                          ),
+                          Text(
+                            widget.price,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.w700,
+                              color: Colors.green,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      SizedBox(
+                        height: 50,
+                        width: 160,
+                        child: TextButton(
+                          onPressed: () {
+                            // ****************************
+                            print('Pay tapped');
+                          },
+                          style: TextButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            foregroundColor: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                          child: const Text(
+                            'PAY',
+                            style: TextStyle(
+                              fontFamily: 'NimbusSanL',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+          ),
         ],
       ),
     );
